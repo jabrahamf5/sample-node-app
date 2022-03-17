@@ -2,7 +2,7 @@
 const express = require("express");
 const http = require('http');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 
 const app = express();
 
@@ -17,5 +17,6 @@ app.get("/api", (req, res) => {
 // });
 
 var server = http.createServer(app);
-server.listen(PORT);
-console.log(`Hello!!! Server listening on ${PORT}`);
+server.listen(PORT, () => {
+    console.log(`Hello! Server listening on ${PORT}`);
+});
